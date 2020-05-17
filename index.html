@@ -7,7 +7,9 @@
 
 
 		 .container{
+		 	clear: both;
       background-image: url('dice.jpg');
+      background-repeat: no-repeat;
 
       max-width: 100%;
       max-height: 100% ;
@@ -201,13 +203,14 @@
  
 
 if (time_left<0) {
-	//clearTimeout(cd);
+   check();
    limit1++;
 
 	time_left=parseInt(document.getElementById("period").value);
   // index++;
    count++;
    marker(mark,count);
+   
    if(limit1<=Limit1) next();
   
    
@@ -235,11 +238,13 @@ else {
 	
 function check() {
 	
-	var x=parseInt(document.getElementById("num1").value);
+  var x=parseInt(document.getElementById("num1").value);
   var y=parseInt(document.getElementById("num2").value);
   //var z=x*y;
+  var result=-1.254487;
   var z=calculate(x,y);
-  var result=parseInt(document.getElementById("sum").value);
+  if(document.getElementById("sum").value!=(""))
+     result=parseInt(document.getElementById("sum").value);
   var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
 
   	if (z==result) {
