@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Title</title>
+	<style type="text/css">
+
+
+		 .container{
+      background-image: url('dice.jpg');
+
+      max-width: 100%;
+      max-height: 100% ;
+      margin: auto
+      alignment-baseline: center;
+    }
+		
+		   .content{
+      background-color: #000000
+      color: #FFFFFF;
+     align-items: center;
+     text-align: center;
+      width:300px;
+      min-height: 50px;
+      
+     
+      margin: 10px;
+      margin-top: 5px;
+      font-size: 60px;
+    }
+    	   .con{
+      background-color: #000000
+      color: #FFFFFF;
+    align-content: center;
+    text-align-last: center;
+     border-style:none;
+      width:200px;
+      min-height: 50px;
+      
+     
+      margin-left: 5px;
+      margin-top: 5px;
+      font-size: 60px;
+    }
+     .selector{
+      background-color: #000000
+
+      color: #FFFFFF;
+     
+    
+     
+     
+     border-style: none;
+
+      width:50px;
+     height: 50px;
+     font-size: 10px;
+   
+    }
+
+    	   .content1{
+      background-color: #000000
+      color: #FFFFFF;
+     align-items: center;
+       width:50px;
+      min-height: 50px;
+      
+    
+      margin: 10px;
+      margin-top: 5px;
+      font-size: 60px;
+    }
+       .content2{
+      background-color: #000000
+      color: #FFFFFF;
+     align-items: center;
+       width:170px;
+      min-height: 30px;
+      text-align: center;
+      padding:auto;
+     margin-bottom: 50px;
+      margin: 10px;
+     
+      font-size: 40px;
+    }
+
+      .footer{
+      background-color: grey;
+      margin-left: 10px;
+      margin-top: 200px;
+      margin-right: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+       width: auto;
+       font-size: 30px;
+       margin-bottom: 1px;
+       text-align: right;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+    <div style="border-style: dashed;margin-bottom: 25px;background: rgb(200, 200, 200);margin-top:10px;">
+    <table>
+<tr>
+ <td> <p class="content2">Range -></p></td>
+      <td> <input type="text" id="range1" class="content2" style="width: 120px"> </td>
+      <td> <p class="content2" style="width: 20px;font-size: 60px">-</p></td>
+      <td> <input type="text" id="range2" class="content2" style="width: 120px"> </td>
+  
+      <td> <p class="content2">Period -></p></td>
+      <td> <input type="text" id="period" class="content2" style="width: 120px"> </td>
+      <td> <p class="content2" style="width: 250px">Number of Quiz -> </p></td>
+      <td> <input type="text" id="numberOfQuiz" class="content2" style="width: 120px"> </td>
+      <td><button type="submit" class="content2" style="width: 110px; margin-left: 80px" 
+        onclick=" clearTimeout(tim) ;clean();Data();next();  tim=setInterval(counter,1000);selector()"> Start </button></td>
+
+</tr>
+
+    </table>
+    </div>
+<table style="margin-left: 20px;" >
+<tr>
+	<td> <input type="text" id="num1" class="content" ></td>
+	<td> <input type="text" id="sign" class="con" style="width:70px; margin-top: 1px;height: 75px;background: rgba(0,0,0,0); " > </td>
+	<td> <input type="text" id="num2" class="content" > </td>
+	<td> <p class="content1" style="width: 20px;color: white;">=</p></td>
+	<td> <input  type="text" id="sum" class="content"></td>
+	<td><button type="submit" onclick="check();" class="content" style="margin-left: 100px;"> Submit</button> </td>
+    
+
+</tr>
+
+</table>  
+<table>
+<tr>
+	<td><input type="text" class="content1" value="Score" style="width: 150px;background: rgba(0,0,0,0); margin-left: 40px;margin-top: 280px;" readonly="true"></td>
+	<td><input type="text" id="check" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);
+  margin-left: 240px;margin-top: 70px;color: red;font-size: 60px"></td>
+  <td>  <input type="radio" name="choice" style="margin-top: 330px;margin-left: 330px" class="selector" value="+"></td>
+  <td> <input type="radio" name="choice" style="margin-left: 140px;margin-top: 90px;" class="selector" value="-"> </td>
+</tr>
+
+<tr>
+	
+    
+    <td><input type="text" id="mark" class="con" style="width: 250; background: rgba(0, 0, 0, 0);margin-top: 0px;" ></td>
+	
+	<td><input type="text" id="counter" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);margin-top: 0px;"></td>
+
+<td>  <input type="radio" style="margin-top: 210px;margin-left: 400px" name="choice" class="selector" value="x"> </td>
+  <td> <input type="radio" name="choice" style="margin-left: 200px;margin-top: 0px;" class="selector" value="/"> </td>
+
+</tr>
+
+</table>
+
+
+
+
+<div class="footer"> copyright &copy 2020 Mike Zcode</div>
+
+
+
+</div>
+</body>
+
+<script type="text/javascript" language="javascript">
+
+	var tim =setInterval(counter,1000000);
+	
+	var time_left=10;
+
+	var count=0;
+  var mark=0;
+  var limit1=0;
+  var data1=[];
+  var index=0;
+  var data2=[];
+  var answer=0;
+
+ var rbs = document.querySelectorAll('input[name="choice"]');
+          
+     for (var rb of rbs) {
+           rb.checked=true;
+           document.getElementById("sign").value=rb.value;
+
+            break;
+                
+      }
+
+
+
+
+
+
+	function counter(){
+
+  var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
+  
+ 
+
+if (time_left<0) {
+	//clearTimeout(cd);
+   limit1++;
+
+	time_left=parseInt(document.getElementById("period").value);
+  // index++;
+   count++;
+   marker(mark,count);
+   if(limit1<=Limit1) next();
+  
+   
+ 
+    }
+
+else {
+   
+    if(limit1<Limit1){
+
+     document.getElementById("counter").value=time_left;
+     time_left--;
+
+    }else{
+       clearTimeout(tim);
+       document.getElementById("counter").value="";
+       document.getElementById("num1").value="";
+       document.getElementById("num2").value="";
+    }
+    
+
+    }
+
+	}
+	
+function check() {
+	
+	var x=parseInt(document.getElementById("num1").value);
+  var y=parseInt(document.getElementById("num2").value);
+  //var z=x*y;
+  var z=calculate(x,y);
+  var result=parseInt(document.getElementById("sum").value);
+  var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
+
+  	if (z==result) {
+  		
+         limit1++;
+         mark=mark+1;
+         count =count+1;
+         marker(mark,count);
+        if(limit1<=Limit1) next();
+         
+         time_left=parseInt( document.getElementById("period").value);
+         if(limit1<=Limit1)document.getElementById("check").value="OK"; 
+        
+         }
+  	else {
+  		document.getElementById("check").value="X"
+      marker(mark,count);
+        
+
+  		
+  	}
+
+ 
+	if(limit1>Limit1){
+
+      clearTimeout(tim);
+      document.getElementById("counter").value="";   
+      document.getElementById("check").value="";     
+  }
+
+
+	
+}
+function Data(){
+  var quizValue=parseInt(document.getElementById("numberOfQuiz").value);
+  data1=[];
+  data2=[];
+  index=0;
+  var ii=0;
+  var range11=parseInt(document.getElementById("range1").value);
+  var range22=parseInt(document.getElementById("range2").value);
+  var x11=-1,x22=-1;
+
+  var x1= Math.floor((Math.random() * range22) + 1);
+  var x2= Math.floor((Math.random() * range22) + 1);
+label:
+while(true){
+      x11= Math.floor((Math.random() * range22) + 1);
+      x22= Math.floor((Math.random() * range22) + 1);
+
+   if((x11>=range11 && x11<=range22) && (x22<=range22&& x22>=range11)&&(test(x11,x22)))
+   { 
+   // x1=x11;
+   // x2=x22;
+   if(data1.length<0){
+   data1[ii]=x11;
+   data2[ii]=x22;
+
+   }
+
+    for (var k = 0; k < data1.length; k++) {
+     if (x11==data1[k] && x22==data2[k]) { continue label;}
+     
+    }
+
+   
+   data1[ii]=x11;
+   data2[ii]=x22;
+   ii++;
+   
+   var xx=(range22-range11+1)*(range22-range11+1);
+
+   if (xx<quizValue && data1.length==xx)break;
+
+   if(data1.length==quizValue) {break;}
+
+   }
+  
+  }
+
+
+}
+
+function next() {
+	// body...
+ // document.getElementById("t").value=index+"->"+data1[index]+","+data2[index];
+ // <td>  <td> <input type="text" id="t" class="content2" style="width: 120px"> </td></td>
+  document.getElementById("num1").value=data1[index];
+	document.getElementById("num2").value=data2[index];
+
+	document.getElementById("sum").value="";
+	document.getElementById("check").value="";
+  time_left=parseInt( document.getElementById("period").value); 
+	index++;
+ if (index>=data1.length) {index=0;}
+
+}
+function marker(mark1,count1){
+
+	     var s="";
+         var s2=s.concat(mark1," /");
+         var s3= s2.concat(" ",count1);
+         document.getElementById("mark").value=s3;
+         // if(mark==0){
+         //  document.getElementById("mark").value="0/0";
+         // }
+}
+function calculate(x,y){
+answer=0;
+ const rbs = document.querySelectorAll('input[name="choice"]');
+            let selectedValue;
+            for (const rb of rbs) {
+                if (rb.checked) {
+                    selectedValue = rb.value;
+                    break;
+                }
+            }
+
+        
+      switch(selectedValue){
+
+        case "+":
+
+          answer=x+y;
+          
+          break;
+        
+         case "-":
+
+          answer= x-y;
+
+          break;
+         case "x":
+
+         answer=x*y;
+
+          break;
+         case "/":
+
+         answer = Math.floor(x/y);
+
+          break;
+        
+      }
+   
+return answer;
+
+}
+
+function clean() {
+  // body...
+  var y=calculate();
+    
+  document.getElementById("sum").value="";
+  document.getElementById("check").value="";
+ 
+  mark=0;
+  count=0;
+  marker(mark,count);
+  limit1=0;
+  index=0;
+  limit1=0;
+  data1=[];
+  index=0;
+  data2=[];
+ //
+
+ //document.getElementById("sign").value="+";
+}
+function selector(){
+
+   
+  
+
+
+   var rbs = document.querySelectorAll('input[name="choice"]');
+            var selectedValue;
+            for (var rb of rbs) {
+                if (rb.checked) {
+                    selectedValue = rb.value;
+                    document.getElementById("sign").value=rb.value;
+                    break;
+                }
+            }
+    }
+
+function test(x,y){
+
+var tester=true;
+
+     var rbs = document.querySelectorAll('input[name="choice"]');
+            var selectedValue;
+            for (var rb of rbs) {
+                if (rb.checked) {
+                    selectedValue = rb.value;
+                    document.getElementById("sign").value=rb.value;
+                    break;
+                }
+            }
+
+      switch(selectedValue){
+
+        case "+":
+
+          tester=true;
+         
+          break;
+        
+         case "-":
+         
+          tester=(x>=y);
+          //alert(tester);
+
+          break;
+         case "x":
+        
+          tester=true;
+         break;
+
+         case "/":
+        
+        var qutient= Math.floor(x/y);
+        var reminder=x%y;
+        tester=(qutient>=1 && reminder==0);
+       // alert(tester);
+          break;
+        
+      }
+   return tester;
+}
+
+</script>
+
+</html>
