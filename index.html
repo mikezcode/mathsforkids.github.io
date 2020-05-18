@@ -193,22 +193,13 @@
                 
       }
 
-
-
-
-
-
-	function counter(){
+function counter(){
 
   var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
-  
- 
-
 if (time_left<0) {
    check();
    limit1++;
-
-	time_left=parseInt(document.getElementById("period").value);
+   time_left=parseInt(document.getElementById("period").value);
   // index++;
    count++;
    marker(mark,count);
@@ -262,18 +253,14 @@ function check() {
         
          }
   	else {
-  		document.getElementById("check").value="X"
-      marker(mark,count);
-        
-
-  		
-  	}
-
- 
-	if(limit1>Limit1){
+         document.getElementById("check").value="X"
+         marker(mark,count);
+        }
+      
+     if(limit1>Limit1){
 
       clearTimeout(tim);
-      document.getElementById("counter").value="";   
+      //document.getElementById("counter").value="";   
       //document.getElementById("check").value="";     
   }
 
@@ -334,12 +321,12 @@ function next() {
 	// body...
  // document.getElementById("t").value=index+"->"+data1[index]+","+data2[index];
  // <td>  <td> <input type="text" id="t" class="content2" style="width: 120px"> </td></td>
-  document.getElementById("num1").value=data1[index];
+        document.getElementById("num1").value=data1[index];
 	document.getElementById("num2").value=data2[index];
 
-	document.getElementById("sum").value="";
-	document.getElementById("check").value="";
-  time_left=parseInt( document.getElementById("period").value); 
+	//document.getElementById("sum").value="";
+	//document.getElementById("check").value="";
+        time_left=parseInt( document.getElementById("period").value); 
 	index++;
  if (index>=data1.length) {index=0;}
 
