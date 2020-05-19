@@ -194,6 +194,7 @@ var tim =setInterval(counter,1000000);
                 
       }
 
+<<<<<<< HEAD
   var input= document.getElementById("sum");
   input.addEventListener("keyup",function(event){
   if(event.keyCode==13){
@@ -214,16 +215,15 @@ var tim =setInterval(counter,1000000);
 
 
 	function counter(){
+=======
+function counter(){
+>>>>>>> c872e2b90c62390e3c1ff926b61d604d84062b0d
 
   var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
-  
- 
-
 if (time_left<0) {
    check();
    limit1++;
-
-	time_left=parseInt(document.getElementById("period").value);
+   time_left=parseInt(document.getElementById("period").value);
   // index++;
    count++;
    marker(mark,count);
@@ -277,15 +277,11 @@ function check() {
         
          }
   	else {
-  		document.getElementById("check").value="X"
-      marker(mark,count);
-        
-
-  		
-  	}
-
- 
-	if(limit1>Limit1){
+         document.getElementById("check").value="X"
+         marker(mark,count);
+        }
+      
+     if(limit1>Limit1){
 
       clearTimeout(tim);
       document.getElementById("counter").value="";   
@@ -349,12 +345,12 @@ function next() {
 	// body...
  // document.getElementById("t").value=index+"->"+data1[index]+","+data2[index];
  // <td>  <td> <input type="text" id="t" class="content2" style="width: 120px"> </td></td>
-  document.getElementById("num1").value=data1[index];
+        document.getElementById("num1").value=data1[index];
 	document.getElementById("num2").value=data2[index];
 
 	document.getElementById("sum").value="";
 	document.getElementById("check").value="";
-  time_left=parseInt( document.getElementById("period").value); 
+        time_left=parseInt( document.getElementById("period").value); 
 	index++;
  if (index>=data1.length) {index=0;}
   document.getElementById("sum").focus();
