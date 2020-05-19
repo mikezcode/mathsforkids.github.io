@@ -2,18 +2,18 @@
 
 <html>
 <head>
-	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
-	<title> Maths For Kids</title>
-	<style type="text/css">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+  <title> Maths For Kids</title>
+  <style type="text/css">
 
 
-	 .container{
+   .container{
      background-color: #ccd;
 
-		
+    
 
       border-bottom: 6px solid #000;
-	  padding: 10px;  padding-top: 0px;
+    padding: 10px;  padding-top: 0px;
       background-repeat: repeat;
       background-position: top-right;
       background-image: url(dice.jpg);
@@ -23,8 +23,8 @@
      
       alignment-baseline: central;
     }
-		
-		   .content{
+    
+       .content{
       background-color: #000000
       color: #FFFFFF;
      align-items: center;
@@ -37,7 +37,7 @@
       margin-top: 5px;
       font-size: 60px;
     }
-    	   .con{
+         .con{
       background-color: #000000
       color: #FFFFFF;
     align-content: center;
@@ -63,7 +63,7 @@
    
     }
 
-    	   .content1{
+         .content1{
       background-color: #000000
       color: #FFFFFF;
      align-items: center;
@@ -101,10 +101,10 @@
        margin-bottom: 1px;
        text-align: right;
     }
-	</style>
+  </style>
 </head>
 <body class="container" >
-	
+  
     <div style="border-style: dashed;margin-bottom: 1px;background: rgb(200, 200, 200);margin-top:0px;">
     <table>
 <tr>
@@ -126,12 +126,12 @@
     </div>
 <table style="margin-left: 20px;" >
 <tr>
-	<td> <input type="text" id="num1" class="content" ></td>
-	<td> <input type="text" id="sign" class="con" style="width:70px; margin-top: 1px;height: 75px;background: rgba(0,0,0,0); " > </td>
-	<td> <input type="text" id="num2" class="content" > </td>
-	<td> <p class="content1" style="width: 20px;color: white;">=</p></td>
-	<td> <input  type="text" id="sum" class="content"></td>
-	<td><button id="sum_result" type="submit" onclick="check();" class="content" style="margin-left: 100px;width: 240px">Enter</button> </td>
+  <td> <input type="text" id="num1" class="content" ></td>
+  <td> <input type="text" id="sign" class="con" style="width:70px; margin-top: 1px;height: 75px;background: rgba(0,0,0,0); " > </td>
+  <td> <input type="text" id="num2" class="content" > </td>
+  <td> <p class="content1" style="width: 20px;color: white;">=</p></td>
+  <td> <input  type="text" id="sum" class="content"></td>
+  <td><button id="sum_result" type="submit" onclick="check();" class="content" style="margin-left: 100px;width: 240px">Enter</button> </td>
     
 
 </tr>
@@ -139,19 +139,19 @@
 </table>  
 <table>
 <tr>
-	<td><input type="text" class="content1" value="Score" style="width: 150px;background: rgba(0,0,0,0); margin-left: 40px;margin-top: 280px;" readonly="true"></td>
-	<td><input type="text" id="check" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);
+  <td><input type="text" class="content1" value="Score" style="width: 150px;background: rgba(0,0,0,0); margin-left: 40px;margin-top: 280px;" readonly="true"></td>
+  <td><input type="text" id="check" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);
   margin-left: 240px;margin-top: 70px;color: red;font-size: 60px"></td>
   <td>  <input type="radio" name="choice" style="margin-top: 280px;margin-left: 330px" class="selector" value="+"></td>
   <td> <input type="radio" name="choice" style="margin-left: 140px;margin-top: 0px;" class="selector" value="-"> </td>
 </tr>
 
 <tr>
-	
+  
     
     <td><input type="text" id="mark" class="con" style="width: 250; background: rgba(0, 0, 0, 0);margin-top: 0px;" ></td>
-	
-	<td><input type="text" id="counter" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);margin-top: 0px;font-size: 90px;color: red"></td>
+  
+  <td><input type="text" id="counter" class="con" style="margin-left: 250px; background: rgba(0, 0, 0, 0);margin-top: 0px;font-size: 90px;color: red"></td>
 
 <td>  <input type="radio" style="margin-top: 160px;margin-left: 400px" name="choice" class="selector" value="x"> </td>
   <td> <input type="radio" name="choice" style="margin-left: 200px;margin-top: 0px;" class="selector" value="/"> </td>
@@ -173,10 +173,10 @@
 <script type="text/javascript" language="javascript">
 
 var tim =setInterval(counter,1000000);
-	
-	var time_left=10;
+  
+  var time_left=10;
 
-	var count=0;
+  var count=0;
   var mark=0;
   var limit1=0;
   var data1=[];
@@ -194,36 +194,36 @@ var tim =setInterval(counter,1000000);
                 
       }
 
-<<<<<<< HEAD
   var input= document.getElementById("sum");
   input.addEventListener("keyup",function(event){
   if(event.keyCode==13){
-  	event.preventDefault();
-  	document.getElementById("sum_result").click();
+    event.preventDefault();
+    document.getElementById("sum_result").click();
   }
 });
 
   var input= document.getElementById("numberOfQuiz");
   input.addEventListener("keyup",function(event){
   if(event.keyCode==13){
-  	event.preventDefault();
-  	document.getElementById("start").click();
+    event.preventDefault();
+    document.getElementById("start").click();
   }
 });
 
 
 
 
-	function counter(){
-=======
-function counter(){
->>>>>>> c872e2b90c62390e3c1ff926b61d604d84062b0d
+  function counter(){
 
   var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
+  
+ 
+
 if (time_left<0) {
    check();
    limit1++;
-   time_left=parseInt(document.getElementById("period").value);
+
+  time_left=parseInt(document.getElementById("period").value);
   // index++;
    count++;
    marker(mark,count);
@@ -251,10 +251,10 @@ else {
 
     }
 
-	}
-	
+  }
+  
 function check() {
-	
+  
   var x=parseInt(document.getElementById("num1").value);
   var y=parseInt(document.getElementById("num2").value);
   //var z=x*y;
@@ -264,8 +264,8 @@ function check() {
      result=(document.getElementById("sum").value);
   var Limit1=parseInt(document.getElementById("numberOfQuiz").value);
 
-  	if (z==result) {
-  		
+    if (z==result) {
+      
          limit1++;
          mark=mark+1;
          count =count+1;
@@ -276,12 +276,16 @@ function check() {
          if(limit1<=Limit1)document.getElementById("check").value="OK"; 
         
          }
-  	else {
-         document.getElementById("check").value="X"
-         marker(mark,count);
-        }
+    else {
+      document.getElementById("check").value="X"
+      marker(mark,count);
+        
+
       
-     if(limit1>Limit1){
+    }
+
+ 
+  if(limit1>Limit1){
 
       clearTimeout(tim);
       document.getElementById("counter").value="";   
@@ -289,7 +293,7 @@ function check() {
   }
 
 
-	
+  
 }
 function Data(){
   var quizValue=parseInt(document.getElementById("numberOfQuiz").value);
@@ -342,22 +346,22 @@ while(true){
 }
 
 function next() {
-	// body...
+  // body...
  // document.getElementById("t").value=index+"->"+data1[index]+","+data2[index];
  // <td>  <td> <input type="text" id="t" class="content2" style="width: 120px"> </td></td>
-        document.getElementById("num1").value=data1[index];
-	document.getElementById("num2").value=data2[index];
+  document.getElementById("num1").value=data1[index];
+  document.getElementById("num2").value=data2[index];
 
-	document.getElementById("sum").value="";
-	document.getElementById("check").value="";
-        time_left=parseInt( document.getElementById("period").value); 
-	index++;
+  document.getElementById("sum").value="";
+  document.getElementById("check").value="";
+  time_left=parseInt( document.getElementById("period").value); 
+  index++;
  if (index>=data1.length) {index=0;}
   document.getElementById("sum").focus();
 }
 function marker(mark1,count1){
 
-	     var s="";
+       var s="";
          var s2=s.concat(mark1," /");
          var s3= s2.concat(" ",count1);
          document.getElementById("mark").value=s3;
