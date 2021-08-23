@@ -488,7 +488,7 @@ var tester=true;
         
         var qutient= Math.floor(x/y);
         var reminder=x%y;
-        tester=(qutient>=1 && reminder==0);
+        tester=(qutient>=1&&qutient<=12 && reminder==0 && y>=1 && y<=12 );
        // alert(tester);
           break;
         
