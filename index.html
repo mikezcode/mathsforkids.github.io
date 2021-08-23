@@ -9,24 +9,22 @@
 
    .container{
      background-color: #ccd;
-
-    
-
-      border-bottom: 6px solid #000;
-    padding: 10px;  padding-top: 0px;
-      background-repeat: repeat;
-      background-position: top-right;
+     width:100%;
+     
+    border-bottom: 6px solid #000;
+    padding: 0 10px 10px 10px;
+     background-position: top-right;
       background-image: url(dice.jpg);
+      background-repeat:no-repeat;
      width: 100%;
      height: 100% ;
-      margin: auto
+      margin: 0 auto;
      
-      alignment-baseline: central;
     }
     
        .content{
-      background-color: #000000
-      color: #FFFFFF;
+      color: #000000;
+      background-color: #FFFFFF;
      align-items: center;
      text-align: center;
       width:300px;
@@ -38,8 +36,8 @@
       font-size: 60px;
     }
          .con{
-      background-color: #000000
-      color: #FFFFFF;
+      color: #000000;
+      background-color: #FFFFFF;
     align-content: center;
     text-align-last: center;
      border-style:none;
@@ -52,9 +50,9 @@
       font-size: 60px;
     }
      .selector{
-      background-color: #000000
+      color: #000000;
 
-      color: #FFFFFF;
+      background-color: #FFFFFF;
       border-style: none;
 
       width:50px;
@@ -64,8 +62,8 @@
     }
 
          .content1{
-      background-color: #000000
-      color: #FFFFFF;
+      color: #000000;
+      background-color: #FFFFFF;
      align-items: center;
        width:50px;
       min-height: 50px;
@@ -76,8 +74,8 @@
       font-size: 60px;
     }
        .content2{
-      background-color: #000000
-      color: #FFFFFF;
+      color: #000000;
+      background-color: #FFFFFF;
      align-items: center;
        width:170px;
       min-height: 30px;
@@ -101,16 +99,58 @@
        margin-bottom: 1px;
        text-align: right;
     }
+    nav{
+     display:flex;
+     background-color: #123;
+     
+    }
+    ul{
+      display:flex;
+      gap: 2rem;
+    }
+    ul:last-child{
+      margin-left: auto;
+      
+    }
+    ul:first-child{
+      margin-right: auto;
+     
+    }
+    ul li a{
+      font-size:2rem;
+      color:rgb(80, 206, 64);
+      text-decoration:none;
+      
+
+    }
+    ul li:nth-child(1){
+border-right: 5px white solid;
+padding-right: 2rem;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+      text-decoration-color: yellow;
+    }
+
   </style>
 </head>
-<body class="container" >
+<body >
+   <nav>
+  <ul>
+    <li><a href="index.html">ሒሳብ</a></li>
+    <li><a href="hahu.html">አማረኛ</a></li>
+   
+  </ul>
+
+   </nav>
+  <div class="container" >
   
     <div style="border-style: dashed;margin-bottom: 1px;background: rgb(200, 200, 200);margin-top:0px;">
     <table>
 <tr>
  <td> <p class="content2">Numbers Between </p></td>
       <td> <input type="text" id="range1" class="content2" style="width: 120px"> </td>
-      <td> <p class="content2" style="width: 50px;font-size:40px">and</p></td>
+      <td> <p class="content2" style="padding:0 15px; width: 50px;font-size:40px">and</p></td>
       <td> <input type="text" id="range2" class="content2" style="width: 120px"> </td>
   
       <td> <p class="content2">Time Per Question in Second </p></td>
@@ -129,7 +169,7 @@
   <td> <input type="text" id="num1" class="content" ></td>
   <td> <input type="text" id="sign" class="con" style="width:70px; margin-top: 1px;height: 75px;background: rgba(0,0,0,0); " > </td>
   <td> <input type="text" id="num2" class="content" > </td>
-  <td> <p class="content1" style="width: 20px;color: white;">=</p></td>
+  <td> <p class="content1" style="padding:0 15px; width: auto;color: rgb(15, 4, 4);">=</p></td>
   <td> <input  type="text" id="sum" class="content"></td>
   <td><button id="sum_result" type="submit" onclick="check();" class="content" style="margin-left: 100px;width: 240px">Enter</button> </td>
     
@@ -167,13 +207,17 @@
 
 
 
-
+</div>
 </body>
 
 <script type="text/javascript" language="javascript">
 
 var tim =setInterval(counter,1000000);
   
+
+
+
+
   var time_left=10;
 
   var count=0;
@@ -360,6 +404,12 @@ function next() {
  if (index>=data1.length) {index=0;}
   document.getElementById("sum").focus();
 }
+
+
+
+
+//////////////// marker///////////////
+
 function marker(mark1,count1){
 
        var s="";
@@ -370,6 +420,9 @@ function marker(mark1,count1){
          //  document.getElementById("mark").value="0/0";
          // }
 }
+
+//////////////////////////////////
+
 function calculate(x,y){
 answer=0;
  const rbs = document.querySelectorAll('input[name="choice"]');
@@ -402,7 +455,7 @@ answer=0;
           break;
          case "/":
 
-         answer = Math.floor(x/y);
+         answer = Math.round(x/y);
 
           break;
         
@@ -486,7 +539,7 @@ var tester=true;
         
         var qutient= Math.floor(x/y);
         var reminder=x%y;
-        tester=(qutient>=1 && reminder==0);
+        tester=(qutient>=1 &&qutient<=12 && reminder==0 && y>=1 && y<=12 );
        // alert(tester);
           break;
         
