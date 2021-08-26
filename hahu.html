@@ -53,7 +53,7 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        /* padding: 5px 20px; */
+        
         
       }
      
@@ -74,8 +74,6 @@
         
         font-size: 1.5rem;
         padding: 5px 10px;
-        /* width: minmax(100px,200px); */
-        /* justify-self: center; */
         margin-right: 20px;
       }
       nav ul li button{
@@ -83,7 +81,7 @@
         color: red;
         padding: 0px;
         font-size: 1.5rem;
-         padding: 10px 20px;
+        padding: 10px 20px;
         
       }
       #ctrl{
@@ -97,7 +95,7 @@
       }
       .pause{
         background-color: green;
-        /* jhbsxjasbxcghsfghghsffgh */
+        
       }
     </style>
     
@@ -152,16 +150,7 @@
       body2.style.height = "100vh";
       let timer=null;
       
-      // if (time.value!= "")
-      //   timeInterval = time.value * 1000;
-      // else timeInterval = 5000;
-
-
-    //  time.addEventListener("change",(event)=>{
-    //   clearInterval(timer);
-    //   run(time.value*1000);
-       
-    //  })
+    
     let playCount=0;
     play.addEventListener("click",()=>{
     
@@ -199,9 +188,7 @@ playCount++;
         mike: {
             let ran = Math.round(Math.random() * (4951 - 4608)) + 4608;
             let index = ran;
-            //    mike:for (let index = 4608; index < 4952; index+=8) {
-            //  let tr= document.createElement("tr");
-            //  tr.innerHTML+=index
+            
             if (
               bt(index, 4680, 4688) ||
               bt(index, 4688, 4696) ||
